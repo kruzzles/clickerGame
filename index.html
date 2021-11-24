@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Game thing </title>
+</head>
+<body style="background-color: purple;">
+
+    <div id="gameOver">
+        <h1> EE </h1>
+    </div>
+
+    <div id="clickThing" onclick="myFunction()">
+        <img src="https://static.wikia.nocookie.net/d1f6e451-36ec-44e4-ba79-d19c03f4eb6d/scale-to-width/755" id="image">
+    </div>
+
+    <div id="numberCounter">
+        0
+    </div>
+
+    <script>
+
+    var x = 0;
+
+    var gameOver = document.getElementById("gameOver")
+    
+
+    function myFunction() {
+
+        x++
+
+        const image = document.getElementById("image");
+        image.style.filter = "drop-shadow(30px 10px 4px #4444dd)";
+        image.style.filter = "brightness(30%)";
+        var audio = new Audio('audio_file.mp3');
+        audio.play();
+
+        setInterval(function(){
+            image.style.filter = "brightness(100%)";
+        }, 100);
+
+        document.getElementById("numberCounter").innerHTML = x;
+
+        if (x >50) {
+            document.body.style.background = "red";
+        }
+
+        if (x >100) {
+            document.body.style.background = "orange";
+        }
+
+        if (x >150) {
+            document.body.style.background = "yellow";
+        }
+
+        if (x >200) {
+            document.body.style.background = "green";
+        }
+
+        if (x >250) {
+            document.body.style.background = "blue";
+        }
+
+        if (x >300) {
+            document.body.style.background = "purple";
+        }
+
+        if (x >350) {
+            var minecraft = new Audio('minecraft.mp3');
+            minecraft.play();
+            gameOver.style.visibility ="visible";
+        }
+    }
+
+    </script>
+</body>
+</html>
